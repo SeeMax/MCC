@@ -1,0 +1,85 @@
+@import "colors";
+
+.partners-page {
+
+  .partners-area {
+    margin-top:60px;
+  }
+
+  .single-partner {
+    display: flex;
+    flex-wrap:wrap;
+    margin-bottom:200px;
+
+    
+    h3 {
+      text-align: center;
+      border-top:1px solid $green;
+      border-bottom:1px solid $green;
+      padding:16px;
+      margin-bottom:40px;
+    }
+
+    .single-partner-content {
+      padding-left:60px;
+      
+
+      img {
+        width:auto;
+        height:120px;
+        max-width:220px;
+        margin-bottom:20px;
+      }
+
+      .seemax-button {
+        margin-top:30px;
+      }
+
+    }
+  }
+}
+
+// 1024px And Below
+@media screen and (max-width: 1024px){
+
+  .partners-page {
+    
+  }
+}
+
+
+// 767px And Below
+@media screen and (max-width: 767px){
+
+  .partners-page {
+
+    .hero-section {
+
+      hr {
+        margin:10px auto 20px auto;
+      }
+    }
+    
+    .partners-area {
+      margin-top:20px;
+    }
+
+    .single-partner {
+      margin-bottom:160px;
+  
+      img {
+        margin:0 auto;
+      }
+
+      h3 {
+        padding:16px 0px;
+        margin-bottom:0px;
+      }
+  
+      .single-partner-content {
+        text-align: center;
+        padding-left:0px;
+      }
+    }
+  }
+}

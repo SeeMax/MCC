@@ -1,0 +1,176 @@
+@import "colors";
+
+.header {
+	position: relative;
+	background:white;
+
+	.content {
+		position: relative;
+		height:auto;
+		padding-top:20px;
+		padding-bottom:20px;
+		justify-content: space-between;
+		align-content: center;
+		align-items:center;
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	.main-nav { 
+		display: flex;
+		flex-wrap:wrap;
+	
+		a {
+			color:$blue;
+			font:800 16px/1 "Kessel", sans-serif;
+			position: relative;
+			padding:3px 0;
+			margin-left:26px;
+
+			&:after {
+				transition:all 0.5s ease;
+				background-color: white;
+				z-index:1;
+				bottom:-2px;
+			}
+
+			&:hover {
+				
+				&:after {
+					height:1px;
+					background-color:$darkerGreen;
+				}
+			}
+		}
+	}
+
+	.current-menu-item {
+		
+		&:after {
+			background-color: $green;
+		}
+	}
+
+
+	.sub-menu {
+		position: absolute;
+		display: flex;
+		justify-content: flex-end;
+		padding:50px;
+		z-index:101;
+		top:100%;
+		left:0;
+		width:100%;
+		height:auto;
+	}
+}
+
+
+.header-logo {
+	position: relative;
+	height:80px;
+	width:auto;
+
+	a {
+		&:after {
+			display:none;
+		}
+	}
+
+	img {
+		height:100%;
+		width:auto;
+	}
+}
+
+.mobile-menu {
+	display: none;
+}
+
+
+// 1024px And Below
+@media screen and (max-width: 1024px){
+
+	.header {
+
+		.header-logo {
+			z-index:101;
+		}
+
+		.mobile-menu {
+			cursor: pointer;
+			display: block;
+			position: absolute;
+			// top is 1/2 of .header height minus height of .mobile-menu (which is span height + margin-top)
+			top:52px;
+			// right is equal to padding-right of .content
+			right:25px;
+			z-index:102;
+			width:24px;
+			height:auto;
+
+			span {
+				transform-origin:50% 50%;
+				display: block;
+				height:1px;
+				width:100%;
+				margin:5px 0 0 0;
+				background-color:$blue;
+			}
+		}
+
+
+		.main-nav {
+			position: fixed;
+			top:-100vh;
+			left:0;
+			height:100vh;
+			width:100%;
+			padding-top:180px;
+			flex-direction: column;
+			align-items: center;
+			background: $blueGradient;
+			clip-path: polygon(100% 0, 100% 80%, 50% 100%, 0 80%, 0 0);
+			z-index:100;
+
+			a {
+				font-size:30px;
+				transition:all 0s;
+				opacity:0;
+				transform:translateY(-30px);
+				color:white;
+				margin:0 0 2em 0;
+				display: inline-block;
+				width:auto;
+
+				&:after {
+					background-color:rgba(0,0,0,0);
+				}
+			}
+
+			.current-menu-item {
+		
+				&:after {
+					background-color: $darkerGreen;
+				}
+			}
+		}
+	}
+}
+
+
+// 767px And Below
+@media screen and (max-width: 767px){
+
+	.header {
+
+		.main-nav {
+			
+			a {
+				font-size:16px;
+			}
+		}		
+	}
+}

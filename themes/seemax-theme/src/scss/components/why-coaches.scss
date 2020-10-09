@@ -1,0 +1,99 @@
+@import "colors";
+
+.why-coaches-page {
+
+  .hero-section {
+    
+    .content {
+      padding-top:120px;
+      padding-bottom:120px;
+    }
+  }
+
+  .the-challenge-main-section {
+    
+    .content {
+      padding-top:0px;
+      align-items:stretch;
+    }
+
+    .color-flag-clip {
+      padding:80px 65px 200px 65px;
+      text-align:center;
+  
+      &:after {
+        width:calc(100% - 30px);
+        left:15px;
+      }
+    }
+  }
+
+  .description-half {
+    padding-left:60px;
+    padding-right:0px;
+    padding-top:30px;
+
+    h4 {
+      margin-top:50px;
+      // margin-bottom:-px;
+      color:$blue;
+    }
+  }
+}
+// 1024px And Below
+@media screen and (max-width: 1024px){
+
+}
+
+
+// 767px And Below
+@media screen and (max-width: 767px){
+
+  .why-coaches-page {
+
+    .the-challenge-main-section {
+      
+      .content {
+        padding:0px;
+      }
+
+      .color-flag-clip {
+        padding:50px 40px 170px 40px;
+
+        &:after {
+          left:0;
+          width:100%;
+        }
+
+        h3 {
+          font-size:52px;
+          margin-bottom:10px;
+        }
+        
+      }
+    }
+  
+    .description-half {
+      padding-left:35px;
+      padding-right:35px;
+      padding-top:0px;
+    }
+
+    .shield-section {
+			padding:50px 0px;
+
+			h2 {
+				margin-bottom:30px;
+			}
+
+			.content {
+				
+			}
+			
+			.green-shield-svg {
+				width:100%;
+				
+			}
+		}
+  }
+}

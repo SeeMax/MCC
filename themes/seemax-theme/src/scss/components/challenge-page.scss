@@ -1,0 +1,171 @@
+@import "colors";
+
+.challenge-page {
+
+  .color-flag-clip {
+    padding:80px 65px 200px 65px;
+    text-align:center;
+
+    &:after {
+      width:calc(100% - 30px);
+      left:15px;
+    }
+  }
+
+  .challenge-main-section {
+    margin-bottom:70px;
+    
+    .content {
+      padding-top:0px;
+      align-items:stretch;
+    }
+
+    .color-flag-clip {
+      padding:80px 40px 240px 40px;
+  
+      left:0;
+    }
+
+    .description-half {
+      padding-left:30px;
+      padding-right:30px;
+      padding-top:90px;
+
+      h4 {
+        font-size: 30px;
+        // margin-top:0px;
+        // margin-bottom:-px;
+        color:$blue;
+      }
+
+      p {
+        margin-top:.5em;
+      }
+    }
+  }
+
+  .challenge-cta-section {
+
+    .content {
+      padding-top:0px;
+      padding-bottom:140px;
+    }
+
+    .color-flag-clip {
+      position: relative; 
+      top:-1px;
+      padding:40px 50px 190px 50px;
+      text-align:center;
+
+      img {
+        margin:0 auto;
+        height:90px;
+        width:auto;
+        margin-bottom:30px;
+      }
+
+      hr {
+        margin:0 auto;
+        margin-bottom:20px;
+      }
+
+      p {
+        margin-left:auto;
+        margin-right:auto;
+        max-width:325px;
+      }
+
+      .seemax-button {
+        margin-top:30px;
+      }
+    }
+  }
+}
+
+// 1024px And Below
+@media screen and (max-width: 1024px){
+
+}
+
+
+// 767px And Below
+@media screen and (max-width: 767px){
+
+  .challenge-page {
+
+    .challenge-main-section {
+      margin-bottom:70px;
+      
+      .content {
+        padding:0px;
+        align-items:flex-start;
+      }
+
+      .color-flag-clip {
+        padding:50px 40px 170px 40px;
+
+        &:after {
+          left:0;
+          width:100%;
+        }
+
+        h3 {
+          font-size:52px;
+          margin-bottom:10px;
+        }
+        
+      }
+
+      .description-half {
+        padding-left:35px;
+        padding-right:35px;
+        padding-top:30px;
+
+        h4 {
+          margin-top:50px;
+          // margin-bottom:-px;
+          color:$blue;
+        }
+      }
+    }
+
+    .challenge-cta-section {
+
+      .content {
+        padding-top:0px;
+        padding-bottom:140px;
+      }
+  
+      .color-flag-clip {
+        position: relative; 
+        top:-1px;
+        padding:40px 30px 190px 30px;
+        text-align:center;
+        margin-bottom:70px;
+
+        &:after {
+          left:0;
+          width:100%;
+        }
+  
+        img {
+          margin:0 auto;
+          height:auto;
+          width:calc(100% - 60px);
+          margin-bottom:30px;
+        }
+  
+        hr {
+        }
+  
+        p {
+          
+        }
+  
+        .seemax-button {
+          margin-top:20px;
+        }
+      }
+    }
+  }
+}

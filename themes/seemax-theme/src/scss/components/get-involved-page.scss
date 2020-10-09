@@ -1,0 +1,174 @@
+@import "colors";
+
+.get-involved-page {
+
+  .get-involved-main-section {
+
+    .content {
+      padding-top:70px;
+    }
+
+    .single-involved-step {
+      text-align: center;
+      padding:60px 0px;
+
+      .seemax-button {
+        margin-right:10px;
+        margin-top: 20px;;
+      }
+
+      i {
+        font-size:24px;
+      }
+
+      &:nth-of-type(odd) {
+        border-right:1px solid $green;
+        padding-right:60px;
+      }
+
+      &:nth-of-type(even) {
+        padding-left:60px;
+      }
+      
+      &:nth-of-type(1),&:nth-of-type(2) {
+        border-bottom:1px solid $green;
+        padding-top:0px;
+      }
+    }
+  }
+
+  .contact-form-section {
+    margin-bottom:70px;
+
+    h2 {
+      color:$blue;
+    }
+
+    p {
+      max-width:600px;
+    }
+
+    .contact-disclaimer {
+      max-width:380px;
+      font-style:italic;
+      font-size: 12px;
+      color:$black;
+      opacity:0.75;
+      margin-top:30px;
+
+      a {
+        color:$blue;
+
+        &:after {
+          background-color:$darkerGreen;
+        }
+      }
+    }
+
+    .contact-form-intro {
+      padding-right:30px;
+      margin-bottom:20px;
+    }
+
+    .contact-form-form {
+      margin-top:24px;
+      padding:20px 50px 200px 50px;
+
+      .wpcf7 {
+        width:100%;
+
+        label {
+          font-family:"Kessel", sans-serif;
+          font-weight:400;
+          letter-spacing:0.025em;
+          line-height:2;
+          font-size:16px;
+        }
+
+        input, textarea {
+          font-size:18px;
+          font-weight:300;
+          width:100%;
+          padding: 10px;
+          text-align: left;
+        }
+
+        input[type="submit"] {
+          width:auto;
+          background-color:$green;
+          border:0px solid $green;
+          padding:12px 26px;
+          font-family:"Kessel", sans-serif;
+          font-weight:400;
+        }
+      }
+    }
+  }
+}
+
+// 1024px And Below
+@media screen and (max-width: 1024px){
+
+}
+
+
+// 767px And Below
+@media screen and (max-width: 767px){
+
+  .get-involved-page {
+
+    .get-involved-main-section {
+
+      .content {
+        padding-top:30px;
+      }
+  
+      .single-involved-step {
+        text-align: center;
+        padding:60px 0px;
+        border-bottom:1px solid $green;
+  
+        .seemax-button {
+          margin-right:10px;
+          margin-top: 20px;;
+        }
+  
+        i {
+          font-size:24px;
+        }
+  
+        &:nth-of-type(odd) {
+          border-right:0px solid $green;
+          padding-right:0px;
+        }
+  
+        &:nth-of-type(even) {
+          padding-left:0px;
+        }
+        
+        &:nth-of-type(1) {
+          padding-top:30px;
+        }
+
+        &:nth-of-type(2) {
+          padding-top:60px;
+        }
+      }
+    }
+
+    .contact-form-section {
+      
+      .contact-form-form {
+        padding-left:30px;
+        padding-right:30px;
+
+        .wpcf7 {
+         
+          input {
+            font-size:16px;
+          }
+        }
+      }
+    }
+  }
+}
