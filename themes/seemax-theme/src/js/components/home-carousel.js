@@ -7,7 +7,7 @@ let slickIt = () => {
     variableWidth: true,
     infinite: true,
     autoplay: true,
-    speed:1500,
+    speed:1200,
     autoplaySpeed: 3000,
     pauseOnHover:false,
     cssEase: 'cubic-bezier(.13,.79,.23,.96)',

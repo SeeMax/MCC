@@ -7,10 +7,15 @@ export let revealFlag = () => {
   $('.whiteFlagAnimation').each(function(){
     
     let $flagClip = $(this).find('.flagClip');
+    let $content = $(this).find('.content');
 
-    gsap.set($(this), {
-      perspective:2000, 
+    gsap.set($(this), { 
       overflow:'hidden'
+    });
+
+    gsap.set($content, {
+      perspective:2000,
+      transformStyle: 'preserve-3d'
     });
 
     gsap.set($flagClip, {
@@ -63,7 +68,7 @@ export let heroFlag = () => {
       
       gsap.set([charsh4, charsh2], {
         y:0, 
-        rotationX:-120, 
+        rotationX:-100, 
         opacity:0,
         transformOrigin: 'top center'
       });
@@ -75,12 +80,12 @@ export let heroFlag = () => {
         },
         scrollTrigger: {
           trigger: $(this),
-          start: "center bottom",
+          start: "bottom bottom-=100",
           toggleActions: "play none none reverse",
         }
       });
   
-      tl.to([charsh4, charsh2], {
+      tl.to(charsh2, {
         y:0, 
         opacity:1, 
         rotationX:0, 
@@ -90,6 +95,16 @@ export let heroFlag = () => {
           ease: "power2.inOut"
         }
       }, 'comein');
+      tl.to(charsh4, {
+        y:0, 
+        opacity:1, 
+        rotationX:0, 
+        stagger: {
+          amount: 0.3, 
+          from: "random", 
+          ease: "power2.inOut"
+        }
+      }, 'comein+=0.4');
     })
   }
 }
@@ -179,3 +194,5 @@ export let subFlag = () => {
     }, 'comein+=0.5');
   });
 }
+
+

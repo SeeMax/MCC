@@ -87,10 +87,17 @@ h1, h2, h3, h4, h5 {
 	margin:0;
 	width:100%;
 	font-weight:800;
+
+	div {
+		perspective:2000px;
+		transform-style: preserve-3d; 
+	}
 }
 
 h1 {
 	font-size:72px;
+
+	
 }
 
 h2 {
@@ -177,7 +184,7 @@ hr {
 	background-color:$blue;
 	color:white;
 	padding:14px 30px;
-	transition:all .3s ease;
+	transition:background-color .3s ease;
 	// box-shadow: 0px 3px 2px 0px rgba(0,0,0,0.0);
 
 	a {
@@ -467,6 +474,11 @@ input[type="email"] {
 	h3 {
 
 	}
+	.seemax-button{
+		transition:none;
+	}
+	
+
 }
 
 // 767px And Below

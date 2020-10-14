@@ -81,7 +81,7 @@ export let revealPartner = () => {
 
     let $kids = $partner.children();
     let tl = gsap.timeline({
-      delay:2,
+      delay:1,
       defaults: {
         duration: 1.2, 
         ease: "back.out(1)",

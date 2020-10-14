@@ -21,8 +21,7 @@
     }
 
     .color-flag-clip {
-      padding:80px 40px 240px 40px;
-  
+      padding: 80px 60px 240px 60px;
       left:0;
     }
 
@@ -77,6 +76,15 @@
 
       .seemax-button {
         margin-top:30px;
+
+        a {
+          position: absolute;
+          z-index:3;
+        }
+
+        span {
+          z-index:1;
+        }
       }
     }
   }

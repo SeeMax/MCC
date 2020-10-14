@@ -39,6 +39,28 @@
 
   .hero-section {
 
+		.content {
+    	min-height: 650px;
+		}
+		
+		.the-image {
+
+			&:before {
+				opacity:0.4;
+			}
+		}
+
+		h1 {
+			max-width:1000px;
+		}
+
+		.hero-button-group {
+			margin-top:20px;
+			
+			.seemax-button {
+				margin:10px 10px;
+			}
+		}
 	}
 
 	.hero-banner-section {
@@ -89,7 +111,7 @@
 		}
 
 		p {
-			max-width:610px;
+			// max-width:610px;
 		}
 
 		.seemax-button {
@@ -105,8 +127,8 @@
 			.slick-track {
 				width:100%;
 				display: flex;
-				align-items: flex-end;
-				align-content: flex-end;
+				align-items: center;
+				align-content: center;
 			}
 		}
 
@@ -116,12 +138,13 @@
 		}
 
 		.slick-slide {
+			width:auto;
 			width:100%;
-			max-width:800px;
+			max-width:360px;
 			margin:0px 30px;
 
 			img {
-				opacity:0.7;
+				opacity:0.5;
 				transition:opacity 0.3s ease
 			}
 		}
@@ -158,7 +181,7 @@
 		}
 
 		.arrow-container {
-			max-width:800px;
+			max-width:360px;
 			margin:20px auto 0 auto;			
 		}
 
@@ -258,9 +281,18 @@
 			}
 
 			.seemax-button {
-				font-weight:400;
+				// 	
 				font-size:16px;
 				padding:12px 25px;
+
+				a {
+					position: absolute;
+					z-index: 3;
+				}
+
+				span {
+					z-index:1;
+				}
 			}
 		}
 	}
@@ -279,6 +311,13 @@
 @media screen and (max-width: 767px){
 
 	.home-page {
+
+		.hero-section {
+
+			.content {
+				min-height:calc(100vh - 120px);
+			}
+		}
 
 		.hero-banner-section {
 			padding-bottom:0px;

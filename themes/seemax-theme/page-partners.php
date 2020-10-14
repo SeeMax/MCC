@@ -1,13 +1,19 @@
 <?php /* Template Name: Partners */ get_header(); ?>
 	<main class="partners-page">
-		<?php while (have_posts()) : the_post(); ?>				
-			<section class="hero-section partner-hero-section heroHeadline">
-				<div class="content">	
-					<h1><?php the_title();?></h1>
-					<hr />
-					<?php the_content();?>
-				</div>
-			</section>
+		<?php while (have_posts()) : the_post(); ?>	
+
+		<?php if( have_rows('hero') ): ?>
+        <?php while( have_rows('hero') ): the_row();?>
+            
+          <?php $heroBack = get_sub_field('background_image');?>
+          <section class="hero-section image-hero heroImage">
+            <div class="the-image c-block-fill background-image-section theImage" style="background-image:url(<?php echo $heroBack['url'];?>);"></div>
+            <div class="content">	
+							<h1><?php the_title();?></h1>            
+						</div>
+          </section>
+        <?php endwhile;?>
+			<?php endif;?> 			
 		
 			<section class="partner-section">
 				<div class="content">	
@@ -33,13 +39,15 @@
 									$logoSize = 'medium_large';
 									$logoThumb = $logo['sizes'][ $logoSize ];
 									$logoAlt = $logo['alt'];
-									
+									$partnerAnchor = str_replace(' ', '_', (strtolower($theTitle)));  
 								?>
-								<div class="single-partner">
+								<div class="single-partner" id="<?php echo $partnerAnchor;?>">
 									<h3><?php echo esc_html($theTitle);?></h3>
 									<div class="c-width-50 image-flag">
 										<div class="background-image-section image-flag-inner" style="background-image:url('<?php echo $image['url']; ?>');"></div>
-										<span><?php echo $caption;?></span>
+										<?php if($caption):?>
+											<span><?php echo $caption;?></span>
+										<?php endif;?>
 									</div>
 									<div class="c-width-50 single-partner-content">
 										<?php if($logo):?>
@@ -51,7 +59,7 @@
 										<?php endif;?>
 										
 										<div class="seemax-button">
-											<a class="c-block-fill" href="<?php echo esc_html($website);?>"></a>
+											<a class="c-block-fill" href="<?php echo $link;?>"></a>
 											<span>Visit Website</span>
 										</div>
 									</div>
@@ -62,6 +70,33 @@
 					</div>
 				</div>
 			</section>
+
+			<?php if( have_rows('contact_section') ): ?>
+        <?php while( have_rows('contact_section') ): the_row();?>
+          <?php 
+						$headline = get_sub_field('headline');
+						$body = get_sub_field('body');
+            if( have_rows('button') ):
+              while( have_rows('button') ): the_row();
+                $btnText = get_sub_field('button_text');
+                $btnLink = get_sub_field('button_link');
+              endwhile;
+            endif;
+          ?>
+          <section class="contact-section shield-section animationOne">
+            <div class="content headlineTrigger">			
+              <?php get_template_part( 'partials/_green-shield' ); ?>		
+              <h2><?php echo $headline; ?></h2>
+							<p><?php echo $body;?></p>
+              <div class="seemax-button">
+                <a class="c-block-fill" href="<?php echo $btnLink;?>"></a>
+                <span><?php echo $btnText;?></span>
+              </div>
+            </div>
+          </section>
+
+        <?php endwhile; ?>
+      <?php endif; ?>
 			
 			
 		<?php endwhile; ?>

@@ -125,6 +125,12 @@ add_filter('xmlrpc_enabled', '__return_false');
 ///////////////  WORDPRESS  /////////////////
 /////////// JS AND CSS LIBRARIES ///////////
 ///////////////////////////////////////////
+add_action( 'wp_enqueue_scripts', function(){
+  wp_deregister_script( 'jquery' );
+  wp_register_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js', array(), null, false );
+  wp_enqueue_script( 'jquery');
+});
+
 
 /* Enqueue Scripts */
 function theme_header_scripts() {
@@ -133,7 +139,7 @@ function theme_header_scripts() {
     wp_enqueue_script('DrawSVGPlugin', get_template_directory_uri() . '/js/DrawSVGPlugin.min.js', array(), '3.4.0', true);
     wp_enqueue_script('imagesLoaded', get_template_directory_uri() . '/js/imagesloaded.pkgd.min.js', array(), '4.1.4', true);
     wp_enqueue_script('isotope', get_template_directory_uri() . '/js/isotope.js', array(), '3.0.6', true);
-    // wp_enqueue_script('lightbox', get_template_directory_uri() . '/js/lity.min.js', array(), '2.4.1', true);
+    wp_enqueue_script('lightbox', get_template_directory_uri() . '/js/lity.min.js', array(), '2.4.1', true);
     wp_enqueue_script('MorphSVGPlugin', get_template_directory_uri() . '/js/MorphSVGPlugin.min.js', array(), '3.4.0', true);
     wp_enqueue_script('slickslider', get_template_directory_uri() . '/js/slick.min.js', array('jquery'), '1.8.0', true);
     wp_enqueue_script('splitText', get_template_directory_uri() . '/js/SplitText.min.js', array(), '3.4.0', true);
@@ -143,13 +149,6 @@ function theme_header_scripts() {
     wp_enqueue_script( 'seemax-theme-scripts', get_template_directory_uri() . '/dist/js/bundle.js', array('jquery'), '1.0.0', true );
   }
 }
-
-// include custom jQuery
-function modify_jquery() {
-	wp_deregister_script('jquery');
-	wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js', array(), null, true);
-}
-add_action('wp_enqueue_scripts', 'modify_jquery');
 
 /* Enqueue Styles */
 function theme_style() {
@@ -186,7 +185,7 @@ remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
 add_filter('body_class', 'add_slug_to_body_class'); // Add slug to body class (Starkers build)
 add_filter('wp_nav_menu_args', 'my_wp_nav_menu_args'); // Remove surrounding <div> from WP Navigation
 add_filter('the_category', 'remove_category_rel_from_category_list'); // Remove invalid rel attribute
-add_filter('show_admin_bar', 'remove_admin_bar'); // Remove Admin bar
+// add_filter('show_admin_bar', 'remove_admin_bar'); // Remove Admin bar
 add_filter('style_loader_tag', 'html5_style_remove'); // Remove 'text/css' from enqueued stylesheet
 add_filter('post_thumbnail_html', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to thumbnails
 add_filter('image_send_to_editor', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to post images
@@ -323,22 +322,22 @@ function seemax_custom_excerpt_more($more) {
   return '<a href="'. get_permalink($post->ID) . '">'. __('...') .'</a>';
 } add_filter('excerpt_more', 'seemax_custom_excerpt_more');
 
-// CHILD CPT MENU PARENT HIGHLIGHT //
-function add_current_nav_class($classes, $item) {
-	// Getting the current post details
-	global $post;
-	// Getting the post type of the current post
-	$current_post_type = get_post_type_object(get_post_type($post->ID));
-	$current_post_type_slug = $current_post_type->rewrite[slug];
-	// Getting the URL of the menu item
-	$menu_slug = strtolower(trim($item->url));
-	// If the menu item URL contains the current post types slug add the current-menu-item class
-	if (strpos($menu_slug,$current_post_type_slug) !== false) {
-	   $classes[] = 'current-menu-item';
-	}
-	// Return the corrected set of classes to be added to the menu item
-	return $classes;
-} add_action('nav_menu_css_class', 'add_current_nav_class', 10, 2 );
+// // CHILD CPT MENU PARENT HIGHLIGHT //
+// function add_current_nav_class($classes, $item) {
+// 	// Getting the current post details
+// 	global $post;
+// 	// Getting the post type of the current post
+// 	$current_post_type = get_post_type_object(get_post_type($post->ID));
+// 	$current_post_type_slug = $current_post_type->rewrite[slug];
+// 	// Getting the URL of the menu item
+// 	$menu_slug = strtolower(trim($item->url));
+// 	// If the menu item URL contains the current post types slug add the current-menu-item class
+// 	if (strpos($menu_slug,$current_post_type_slug) !== false) {
+// 	   $classes[] = 'current-menu-item';
+// 	}
+// 	// Return the corrected set of classes to be added to the menu item
+// 	return $classes;
+// } add_action('nav_menu_css_class', 'add_current_nav_class', 10, 2 );
 
 
 // Pagination for paged posts, Page 1, Page 2, Page 3, with Next and Previous Links, No plugin

@@ -7,7 +7,7 @@
 			<li class="mailto-li">
 				<a href='mailto:<?php the_field('email', 'option');?>'><?php the_field('email', 'option');?></a>
 			</li>
-			<li class="social-li">
+			<!-- <li class="social-li">
 				<?php if(get_field('facebook', 'option')):?>	
 					<a class="" href="<?php the_field('facebook', 'options');?>" target="_blank">
 						<i class="fab fa-facebook"></i>
@@ -18,14 +18,15 @@
 						<i class="fab fa-twitter"></i>
 					</a>
 				<?php endif;?>
-			</li>
+			</li> -->
 		</ul>
 		
 		<ul class="footer-tile footer-nav-tile c-width-50">
 			<?php main_theme_nav(); ?>
 		</ul>
 		<div class="copyright">
-			&copy; Copyright <?php echo date("Y"); ?> <?php echo get_bloginfo();?>
+			All photos © Positive Coaching Alliance and Aspen Institute Project Play<br>
+			&copy; Website Copyright <?php echo date("Y"); ?> <?php echo get_bloginfo();?>
 		</div>
 </footer>
 <?php wp_footer(); ?>

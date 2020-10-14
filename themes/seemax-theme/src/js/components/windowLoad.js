@@ -45,6 +45,7 @@ window.addEventListener('load', function() {
 })
 
 
+
 window.addEventListener('resize', function() {
 
 //   if ($(window).width() < 1024) {

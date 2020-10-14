@@ -51,7 +51,7 @@
               <h3><?php echo $title;?></h3>
               <?php echo $body;?>
               <div class="seemax-button">
-                <a href="<?php echo $btnDest;?>"></a>
+                <a class="c-block-fill" href="<?php echo $btnDest;?>"></a>
                 <span><?php echo $btnLbl;?></span>
               </div>
             </div>
@@ -76,7 +76,7 @@
               <h3><?php echo $title;?></h3>
               <?php echo $body;?>
               <div class="seemax-button">
-                <a href="<?php echo $btnDest;?>"></a>
+                <a class="c-block-fill" href="<?php echo $btnDest;?>"></a>
                 <span><?php echo $btnLbl;?></span>
               </div>
             </div>

@@ -55,7 +55,7 @@ export let heroImage = () => {
 
     let imgTL = gsap.timeline({
       defaults: {
-        duration: 12, 
+        duration: 15, 
         ease: "none"
       },
     });
