@@ -8,7 +8,8 @@
       <section class="hero-section image-hero heroImage">
         <div class="the-image c-block-fill background-image-section theImage" style="background-image:url(<?php echo $image['url'];?>);"></div>
 				<div class="content">	
-					<h1><?php the_title();?></h1>
+        <h1><?php the_title();?></h1>
+        <h2 class="home-hero-headline homeHeroHeadline"><?php the_title();?></h2>
 				</div>
 			</section>
 			

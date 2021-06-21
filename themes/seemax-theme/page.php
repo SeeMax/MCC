@@ -4,6 +4,7 @@
 		<section class="hero-section">
 			<div class="content">		
 				<h1><?php the_title();?></h1>
+        <h2 class="home-hero-headline homeHeroHeadline"><?php the_title();?></h2>
 			</div>
 		</section>
 		<section class="default-section">

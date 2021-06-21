@@ -27,6 +27,7 @@
 
               
               <h1><?php echo $heroTitle;?></h1>
+              <div data-nosnippet class="home-hero-headline homeHeroHeadline"><?php echo $heroTitle;?></div>
               
               <div class="hero-button-group">
                 <!-- <div class="seemax-button">

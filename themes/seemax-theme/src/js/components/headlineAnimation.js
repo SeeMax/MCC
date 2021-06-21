@@ -5,7 +5,6 @@ export let revealHeadline = () => {
 
   $('.animationOne').each(function(){
     
-
     let $headlineTrigger = $(this).find('.headlineTrigger');
     let $headline = $(this).find('h2');
     let $p = $(this).find('p');

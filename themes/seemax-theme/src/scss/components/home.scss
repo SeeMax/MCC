@@ -50,8 +50,14 @@
 			}
 		}
 
-		h1 {
+		.home-hero-headline {
 			max-width:1000px;
+			font-family: 'Kessel', sans-serif;
+			line-height: 1.25;
+			margin: 0;
+			width: 100%;
+			font-weight: 800;
+			text-align:center;
 		}
 
 		.hero-button-group {

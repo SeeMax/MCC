@@ -64,6 +64,18 @@ export let heroFlag = () => {
       let splith2 = new SplitText($h2, {type:"words, chars"});
       let charsh4 = splith4.chars; 
       let charsh2 = splith2.chars; 
+
+      $(charsh2).each(function(){
+        // console.log($(this));
+        $(this).attr('data-nosnippet','');
+        // $(this).hide();
+      });
+  
+      $(charsh4).each(function(){
+        // console.log($(this));
+        $(this).attr('data-nosnippet','');
+        // $(this).hide();
+      });
       
       
       gsap.set([charsh4, charsh2], {
@@ -125,6 +137,19 @@ export let subFlag = () => {
     let splith3 = new SplitText($h3, {type:"words, chars"});
     let charsh4 = splith4.chars; 
     let charsh3 = splith3.chars; 
+
+
+    $(charsh3).each(function(){
+      // console.log($(this));
+      $(this).attr('data-nosnippet','');
+      // $(this).hide();
+    });
+
+    $(charsh4).each(function(){
+      // console.log($(this));
+      $(this).attr('data-nosnippet','');
+      // $(this).hide();
+    });
     
 
     // console.log($subDescKids);
